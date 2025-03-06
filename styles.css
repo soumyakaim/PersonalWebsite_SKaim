@@ -212,7 +212,7 @@
         /* Pixie Dust Animation */
         .pixi-dust {
           position: absolute;
-          font-size: 18px; /* Bigger sparkles */
+          font-size: 22px; /* Bigger sparkles */
           pointer-events: none;
           z-index: 100000;
           text-shadow: 0 0 8px rgba(255, 255, 150, 0.9); /* Glowing effect */
