@@ -215,14 +215,24 @@
 
 
         /* Pixie Dust Animation */
-        .pixi-dust {
-          position: absolute;
-          font-size: 22px; /* Bigger sparkles */
-          pointer-events: none;
-          z-index: 100000;
-          text-shadow: 0 0 8px rgba(255, 255, 150, 0.9); /* Glowing effect */
-          opacity: 1;
-          transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+       .pixi-dust {
+            position: absolute;
+            font-size: 14px; /* Adjust size of stars */
+            color: gold, pink, purple, yellow, blue; /* You can change this to white, pink, etc. */
+            text-shadow: 0 0 8px rgba(255, 215, 0, 1), 0 0 15px rgba(255, 255, 255, 1);
+            pointer-events: none;
+            opacity: 1;
+            animation: fadeOut 1s ease-out forwards, moveUp 1s ease-out forwards;
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        @keyframes moveUp {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-10px); } /* Move stars slightly upward */
         }
 
 
@@ -310,42 +320,6 @@
         /* offset so sectiosn arent hidden by TOC */
         section {
             scroll-margin-top: 50px;
-        }
-
-        /* Fishbowl & View Counter */
-        #bottom-left {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Sticky Note Style */
-        .sticky-note {
-            text-align: center;
-            margin: auto;
-            max-width: 400px;
-            position: relative;
-            width: 100%;
-            text-align: center;
-            background: #fff59907; /* Soft Yellow */
-            padding: 20px;
-            font-family: 'Comic Sans MS', cursive;
-            font-size: 13px;
-            color: black;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-        }
-
-
-        .sticky-note img {
-            max-width: 250px;
         }
 
 
