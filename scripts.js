@@ -169,29 +169,27 @@
         // Counts website visits and stores the value in Local Storage
         // The view count increases each time the page load
         document.addEventListener("DOMContentLoaded", function () {
-            let counterElement = document.getElementById("viewCounter");
+            console.log("📌 DOM fully loaded.");
         
-            if (counterElement) { // Ensure the element exists before updating
+            // Select all elements with class "viewCounter"
+            let counterElements = document.querySelectorAll(".viewCounter");
+        
+            if (counterElements.length > 0) {
                 let views = localStorage.getItem("viewCounter") || 0;
                 views = parseInt(views) + 1; // Convert to number and increment
                 localStorage.setItem("viewCounter", views);
-                counterElement.innerText = views;
+        
+                // Update all counters
+                counterElements.forEach(counter => {
+                    counter.innerText = views;
+                });
+        
+                console.log(`✅ View Counter Updated: ${views}`);
             } else {
-                console.error("❌ viewCounter element not found in the DOM.");
+                console.error("❌ No viewCounter elements found.");
             }
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // Ensure #viewCounter exists before updating
-            let counterElement = document.getElementById("viewCounter");
-            if (counterElement) {
-                let views = localStorage.getItem("viewCounter") || 0;
-                views = parseInt(views) + 1; // Convert to number and increment
-                localStorage.setItem("viewCounter", views);
-                counterElement.innerText = views;
-            } else {
-                console.error("❌ viewCounter element not found.");
-            }
         
             // Ensure #topButton exists before adding event listener
             let topButton = document.getElementById("topButton");
@@ -201,22 +199,6 @@
                 });
             } else {
                 console.error("❌ topButton element not found.");
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("📌 DOM fully loaded.");
-            
-            let counterElement = document.getElementById("viewCounter");
-            if (counterElement) {
-                let views = localStorage.getItem("viewCounter") || 0;
-                views = parseInt(views) + 1;
-                localStorage.setItem("viewCounter", views);
-                counterElement.innerText = views;
-        
-                console.log(`✅ View Counter Updated: ${views}`);
-            } else {
-                console.error("❌ viewCounter element not found.");
             }
         });
 
