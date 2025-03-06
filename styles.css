@@ -9,7 +9,7 @@
             font-family: 'EB Garamond', serif;
             cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
             overflow-x: hidden;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         /* Header Styling */
@@ -234,7 +234,7 @@
             font-family: 'Courier New', monospace;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
             z-index: 1000;
-            width: 170px; /* Reduce width */
+            width: 140px; /* Reduce width */
             text-align: left;
         }
 
@@ -256,11 +256,11 @@
             padding: 8px;  /* Increase padding for spacing */
             border-radius: 5px;
             transition: background 0.2s;
-            font-size: 1.2rem; /* Increase font size */
+            font-size: 0.8rem; /* Increase/decrease font size */
         }
         
         #toc h3 {
-            font-size: 1.5rem; /* Make TOC title bigger */
+            font-size: 0.9rem; /* Make TOC title bigger/smaller */
             font-weight: bold;
         }
         
