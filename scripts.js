@@ -171,24 +171,29 @@
         document.addEventListener("DOMContentLoaded", function () {
             console.log("📌 DOM fully loaded.");
         
-            // Select all elements with class "viewCounter"
-            let counterElements = document.querySelectorAll(".viewCounter");
+            // Wait for footer to load before updating view counter
+            let checkFooter = setInterval(() => {
+                let counterElements = document.querySelectorAll(".viewCounter");
         
-            if (counterElements.length > 0) {
-                let views = localStorage.getItem("viewCounter") || 0;
-                views = parseInt(views) + 1; // Convert to number and increment
-                localStorage.setItem("viewCounter", views);
+                if (counterElements.length > 0) {
+                    clearInterval(checkFooter); // Stop checking once elements are found
         
-                // Update all counters
-                counterElements.forEach(counter => {
-                    counter.innerText = views;
-                });
+                    let views = localStorage.getItem("viewCounter") || 0;
+                    views = parseInt(views) + 1; // Convert to number and increment
+                    localStorage.setItem("viewCounter", views);
         
-                console.log(`✅ View Counter Updated: ${views}`);
-            } else {
-                console.error("❌ No viewCounter elements found.");
-            }
+                    // Update all counters
+                    counterElements.forEach(counter => {
+                        counter.innerText = views;
+                    });
+        
+                    console.log(`✅ View Counter Updated: ${views}`);
+                } else {
+                    console.warn("⚠ Waiting for viewCounter elements...");
+                }
+            }, 500); // Check every 500ms
         });
+
 
         
             // Ensure #topButton exists before adding event listener
