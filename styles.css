@@ -4,13 +4,19 @@
         /* Background: Grey floral pattern for a retro look */
         /* Custom Cursor: Adds a nature-themed cursor */
         body {
-            background: #fbfbfb67 url('https://www.transparenttextures.com/patterns/gray-floral.png');
+            background: #f7f7f7 url('https://www.transparenttextures.com/patterns/gray-floral.png');
             color: rgb(39, 10, 10);
             font-family: 'EB Garamond', serif;
             cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
             overflow-x: hidden;
             font-size: 1.0rem;
         }
+
+        body {
+            background: linear-gradient(rgba(247, 247, 247, 0.9), rgba(247, 247, 247, 0.9)), 
+                        url('https://www.transparenttextures.com/patterns/gray-floral.png');
+        }
+
 
         /* Header Styling */
         #header-container {
@@ -21,8 +27,7 @@
             text-align: center;
         }
 
-        
-        
+            
         /* Ensure TOC does not overlap text */
         #toc {
             position: fixed;
