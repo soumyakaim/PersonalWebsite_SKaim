@@ -15,36 +15,36 @@
         }
 
 
-        // Creates a magical pixie-dust effect when moving the mouse
-        // The dust particles disappear after 10 seconds
-       document.addEventListener("mousemove", function (e) {
-            for (let i = 0; i < 5; i++) { // Generate multiple particles per movement
-                let dust = document.createElement("img");
-                dust.src = "images/pixie-dust.png"; // Make sure this file exists
+       // Creates a magical pixie-dust effect when moving the mouse
+        document.addEventListener("mousemove", function (e) {
+            for (let i = 0; i < 8; i++) { // Increase number of particles per movement
+                let dust = document.createElement("div");
                 dust.className = "pixi-dust";
                 document.body.appendChild(dust);
         
                 // Randomize position slightly around cursor
-                let offsetX = (Math.random() - 0.5) * 20; // Random between -10px and 10px
-                let offsetY = (Math.random() - 0.5) * 20;
+                let offsetX = (Math.random() - 0.5) * 25; // Spread out more
+                let offsetY = (Math.random() - 0.5) * 25;
         
                 dust.style.left = `${e.pageX + offsetX}px`;
                 dust.style.top = `${e.pageY + offsetY}px`;
         
-                // Random size between 10px and 30px
-                let size = Math.random() * 20 + 10;
+                // Random size between 15px and 40px
+                let size = Math.random() * 25 + 15;
                 dust.style.width = `${size}px`;
                 dust.style.height = `${size}px`;
         
-                // Random animation duration (shorter ones disappear faster)
-                let duration = Math.random() * 2 + 1; // Between 1s and 3s
-                dust.style.animation = `fadeOut ${duration}s linear forwards, movePixieDust ${duration}s ease-in-out`;
+                // Random animation duration (between 2s and 4s)
+                let duration = Math.random() * 2 + 2;
+                dust.style.animation = `fadeOut ${duration}s linear forwards, floatPixieDust ${duration}s ease-in-out`;
         
+                // Remove dust after animation ends
                 setTimeout(() => {
                     dust.remove();
-                }, duration * 1000); // Remove when animation ends
+                }, duration * 1000);
             }
         });
+
 
 
         // Function to play a sound
@@ -161,37 +161,6 @@
                     popup.style.display = "none";
                 }
             });
-        });
-
-
-
-        // View Counter (Stored in Local Storage)
-        // Counts website visits and stores the value in Local Storage
-        // The view count increases each time the page load
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("📌 DOM fully loaded.");
-        
-            // Wait for footer to load before updating view counter
-            let checkFooter = setInterval(() => {
-                let counterElements = document.querySelectorAll(".viewCounter");
-        
-                if (counterElements.length > 0) {
-                    clearInterval(checkFooter); // Stop checking once elements are found
-        
-                    let views = localStorage.getItem("viewCounter") || 0;
-                    views = parseInt(views) + 1; // Convert to number and increment
-                    localStorage.setItem("viewCounter", views);
-        
-                    // Update all counters
-                    counterElements.forEach(counter => {
-                        counter.innerText = views;
-                    });
-        
-                    console.log(`✅ View Counter Updated: ${views}`);
-                } else {
-                    console.warn("⚠ Waiting for viewCounter elements...");
-                }
-            }, 500); // Check every 500ms
         });
 
 
