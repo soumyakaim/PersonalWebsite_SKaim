@@ -6,14 +6,14 @@ This is **Version 1.0**, and I aim to improve both the aesthetics (aligning it m
 ## 🔮 Planned Improvements
 - Improve website styling to enhance the **early 2000s aesthetic**.
 - Make the **Table of Contents (TOC) non-overlapping** and more responsive.
-- Fix **video upload issues** (currently facing compression limitations, so I'll be hosting them externally).
+- Fix **video upload issues** (currently facing compression limitations, so I'll be hosting them externally (aka YT)).
 - Add **more interactive elements**, animations, and dynamic content.
 
 ## ⚡ Current Issues
 - **Table of Contents (TOC) overlaps the main text** on certain screen sizes.
-- **Videos are not uploading properly** despite compression—I'll move to external hosting for now.
 - The setup is not mobile friendly.
-- Theview counter is not updating. 
+- The view counter is not updating. Removed it for now, I will come back to it later.
+- The pixie dust effect is not workiing even thought it works when I run the script via VScode. 
 
 ## 🌐 Live Website
 [🔗 Visit my website here](https://soumyakaim.github.io/PersonalWebsite_SKaim/)
