@@ -167,14 +167,7 @@
 
         // View Counter (Stored in Local Storage)
         // Counts website visits and stores the value in Local Storage
-        // The view count increases each time the page loads
-        document.addEventListener("DOMContentLoaded", function () {
-            let views = localStorage.getItem("viewCounter") || 0;
-            views++;
-            localStorage.setItem("viewCounter", views);
-            document.getElementById("viewCounter").innerText = views;
-        });
-
+        // The view count increases each time the page load
         document.addEventListener("DOMContentLoaded", function () {
             let counterElement = document.getElementById("viewCounter");
         
@@ -187,6 +180,30 @@
                 console.error("❌ viewCounter element not found in the DOM.");
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ensure #viewCounter exists before updating
+            let counterElement = document.getElementById("viewCounter");
+            if (counterElement) {
+                let views = localStorage.getItem("viewCounter") || 0;
+                views = parseInt(views) + 1; // Convert to number and increment
+                localStorage.setItem("viewCounter", views);
+                counterElement.innerText = views;
+            } else {
+                console.error("❌ viewCounter element not found.");
+            }
+        
+            // Ensure #topButton exists before adding event listener
+            let topButton = document.getElementById("topButton");
+            if (topButton) {
+                topButton.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            } else {
+                console.error("❌ topButton element not found.");
+            }
+        });
+
 
 
         document.getElementById("topButton").addEventListener("click", function() {
