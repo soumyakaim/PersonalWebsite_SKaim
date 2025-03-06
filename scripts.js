@@ -15,35 +15,144 @@
         }
 
 
-       // Creates a magical pixie-dust effect when moving the mouse
-        document.addEventListener("mousemove", function (e) {
-            for (let i = 0; i < 8; i++) { // Increase number of particles per movement
-                let dust = document.createElement("div");
-                dust.className = "pixi-dust";
-                document.body.appendChild(dust);
+               /*!
+         * Fairy Dust Cursor.js
+         * - 90's cursors collection
+         * -- https://github.com/tholman/90s-cursor-effects
+         */
         
-                // Randomize position slightly around cursor
-                let offsetX = (Math.random() - 0.5) * 25; // Spread out more
-                let offsetY = (Math.random() - 0.5) * 25;
-        
-                dust.style.left = `${e.pageX + offsetX}px`;
-                dust.style.top = `${e.pageY + offsetY}px`;
-        
-                // Random size between 15px and 40px
-                let size = Math.random() * 25 + 15;
-                dust.style.width = `${size}px`;
-                dust.style.height = `${size}px`;
-        
-                // Random animation duration (between 2s and 4s)
-                let duration = Math.random() * 2 + 2;
-                dust.style.animation = `fadeOut ${duration}s linear forwards, floatPixieDust ${duration}s ease-in-out`;
-        
-                // Remove dust after animation ends
-                setTimeout(() => {
-                    dust.remove();
-                }, duration * 1000);
+        (function fairyDustCursor() {
+          
+          var possibleColors = ["#FFD700", "#FFFFFF", "#FF69B4"]; // Brighter gold, white, pink for a glowing effect
+          var width = window.innerWidth;
+          var height = window.innerHeight;
+          var cursor = { x: width / 2, y: height / 2 };
+          var particles = [];
+          
+          function init() {
+            bindEvents();
+            loop();
+          }
+          
+          // Bind events
+          function bindEvents() {
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('touchmove', onTouchMove);
+            document.addEventListener('touchstart', onTouchMove);
+            window.addEventListener('resize', onWindowResize);
+          }
+          
+          function onWindowResize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+          }
+          
+          function onTouchMove(e) {
+            if (e.touches.length > 0) {
+              for (var i = 0; i < e.touches.length; i++) {
+                addParticle(e.touches[i].clientX, e.touches[i].clientY, getRandomColor());
+              }
             }
-        });
+          }
+          
+          function onMouseMove(e) {
+            cursor.x = e.clientX;
+            cursor.y = e.clientY;
+            addParticle(cursor.x, cursor.y, getRandomColor());
+          }
+          
+          function addParticle(x, y, color) {
+            var particle = new Particle();
+            particle.init(x, y, color);
+            particles.push(particle);
+          }
+          
+          function updateParticles() {
+            for (var i = 0; i < particles.length; i++) {
+              particles[i].update();
+            }
+            for (var i = particles.length - 1; i >= 0; i--) {
+              if (particles[i].lifeSpan < 0) {
+                particles[i].die();
+                particles.splice(i, 1);
+              }
+            }
+          }
+          
+          function loop() {
+            requestAnimationFrame(loop);
+            updateParticles();
+          }
+          
+          /**
+           * Particles
+           */
+          function Particle() {
+            this.character = "✨"; // Change to star emoji for stronger fairy dust effect
+            this.lifeSpan = 150; // Increase lifespan for longer effect
+            this.initialStyles = {
+              "position": "absolute",
+              "display": "block",
+              "pointerEvents": "none",
+              "z-index": "10000000",
+              "fontSize": "20px", // Bigger sparkles
+              "will-change": "transform",
+              "text-shadow": "0 0 8px rgba(255, 255, 255, 0.9)" // Glowing effect
+            };
+        
+            this.init = function (x, y, color) {
+              this.velocity = {
+                x: (Math.random() < 0.5 ? -1 : 1) * (Math.random() * 2),
+                y: Math.random() * -2
+              };
+        
+              this.position = { x: x - 10, y: y - 10 };
+              this.initialStyles.color = color;
+        
+              this.element = document.createElement("span");
+              this.element.innerHTML = this.character;
+              applyProperties(this.element, this.initialStyles);
+              this.update();
+        
+              document.querySelector(".container").appendChild(this.element);
+            };
+        
+            this.update = function () {
+              this.position.x += this.velocity.x;
+              this.position.y += this.velocity.y;
+              this.lifeSpan--;
+        
+              this.element.style.transform =
+                "translate3d(" +
+                this.position.x +
+                "px," +
+                this.position.y +
+                "px, 0) scale(" +
+                this.lifeSpan / 150 +
+                ")";
+            };
+        
+            this.die = function () {
+              this.element.parentNode.removeChild(this.element);
+            };
+          }
+        
+          /**
+           * Utils
+           */
+          function getRandomColor() {
+            return possibleColors[Math.floor(Math.random() * possibleColors.length)];
+          }
+        
+          function applyProperties(target, properties) {
+            for (var key in properties) {
+              target.style[key] = properties[key];
+            }
+          }
+        
+          init();
+        })();
+
 
 
 
