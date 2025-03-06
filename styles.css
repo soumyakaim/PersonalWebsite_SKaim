@@ -9,7 +9,7 @@
             font-family: 'EB Garamond', serif;
             cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
             overflow-x: hidden;
-            font-size: 1.1rem;
+            font-size: 1.0rem;
         }
 
         /* Header Styling */
@@ -45,19 +45,19 @@
         }
 
         h1 {
-            font-size: 2.6rem;
-        }
-        
-        h2 {
             font-size: 2.2rem;
         }
         
+        h2 {
+            font-size: 2.0rem;
+        }
+        
         h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
         
         h4 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
             /* Keep the header title and description centered */
@@ -97,7 +97,7 @@
 
         p {
             text-align: justify;
-            font-size: 1.3rem; /* Slightly larger paragraph text */
+            font-size: 1.0rem; /* Slightly larger paragraph text */
             line-height: 1.6; /* Improves readability */
         }
         
@@ -189,16 +189,35 @@
         /* Pixie Dust Animation */
         .pixi-dust {
             position: absolute;
-            width: 30px;
-            height: 30px;
+            width: 40px; /* Increase size */
+            height: 40px; /* Increase size */
             pointer-events: none;
-            animation: fadeOut 2s linear forwards;
+            opacity: 1;
+            animation: fadeOut 3s linear forwards, sparkle 1s infinite alternate ease-in-out, movePixieDust 3s linear forwards;
         }
+
+        }
+
 
         @keyframes fadeOut {
             0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(1.5); }
+            50% { opacity: 0.8; transform: scale(1.2); } /* Add an intermediate step */
+            100% { opacity: 0; transform: scale(1.8); } /* Increase scaling effect */
         }
+        
+        @keyframes sparkle {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(2); } /* Make it twinkle */
+        }
+
+        @keyframes movePixieDust {
+            0% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-10px, -10px) scale(1.2); }
+            50% { transform: translate(10px, 10px) scale(1.4); }
+            75% { transform: translate(-15px, 5px) scale(1.3); }
+            100% { transform: translate(15px, -10px) scale(1.6); opacity: 0; }
+        }
+
 
 
         #topButton {
@@ -311,7 +330,7 @@
             background: #fff59907; /* Soft Yellow */
             padding: 20px;
             font-family: 'Comic Sans MS', cursive;
-            font-size: 16px;
+            font-size: 13px;
             color: black;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
@@ -487,7 +506,7 @@
         }
         
         .skills-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
             color: rgb(39, 10, 10);
@@ -517,7 +536,7 @@
         }
         
         .research-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             cursor: pointer;
             color: rgb(39, 10, 10);
@@ -598,7 +617,7 @@
             align-items: center; /* Align text and icons */
             justify-content: center; /* Center everything */
             gap: 10px; /* Space between icons and text */
-            font-size: 2rem; /* Adjust heading size */
+            font-size: 1.8rem; /* Adjust heading size */
             font-weight: bold;
             text-align: center;
         }
