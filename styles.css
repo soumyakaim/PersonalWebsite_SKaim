@@ -68,9 +68,13 @@
 
 
         /* Justify paragraph text inside sections but not in the header */
-        .container p {
-            text-align: justify;
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            margin-left: 160px; /* Push text right to avoid overlap */
         }
+
         
         /* Ensure header text is NOT justified */
         .header-container p {
