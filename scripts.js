@@ -17,19 +17,35 @@
 
         // Creates a magical pixie-dust effect when moving the mouse
         // The dust particles disappear after 10 seconds
-        document.addEventListener("mousemove", function (e) {
-            let dust = document.createElement("img");
-            dust.src = "images/pixie-dust.png"; // Make sure this file exists in your images folder
-            dust.className = "pixi-dust";
-            document.body.appendChild(dust);
-
-            dust.style.left = `${e.pageX}px`;
-            dust.style.top = `${e.pageY}px`;
-
-            setTimeout(() => {
-                dust.remove();
-            }, 10000); // Dust disappears after 10 seconds
+       document.addEventListener("mousemove", function (e) {
+            for (let i = 0; i < 5; i++) { // Generate multiple particles per movement
+                let dust = document.createElement("img");
+                dust.src = "images/pixie-dust.png"; // Make sure this file exists
+                dust.className = "pixi-dust";
+                document.body.appendChild(dust);
+        
+                // Randomize position slightly around cursor
+                let offsetX = (Math.random() - 0.5) * 20; // Random between -10px and 10px
+                let offsetY = (Math.random() - 0.5) * 20;
+        
+                dust.style.left = `${e.pageX + offsetX}px`;
+                dust.style.top = `${e.pageY + offsetY}px`;
+        
+                // Random size between 10px and 30px
+                let size = Math.random() * 20 + 10;
+                dust.style.width = `${size}px`;
+                dust.style.height = `${size}px`;
+        
+                // Random animation duration (shorter ones disappear faster)
+                let duration = Math.random() * 2 + 1; // Between 1s and 3s
+                dust.style.animation = `fadeOut ${duration}s linear forwards, movePixieDust ${duration}s ease-in-out`;
+        
+                setTimeout(() => {
+                    dust.remove();
+                }, duration * 1000); // Remove when animation ends
+            }
         });
+
 
         // Function to play a sound
         function playSound(soundFile) {
