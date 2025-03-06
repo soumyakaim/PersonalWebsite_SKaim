@@ -19,7 +19,6 @@
             width: 100%;
             background: rgba(255, 255, 255, 0);
             padding: 20px;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
@@ -151,35 +150,6 @@
 
 
         /* Pop-Ups */
-        /* Pop-up windows for displaying thesis details */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Fully centers the pop-up */
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            z-index: 9999; /* Make sure it's above everything */
-            max-width: 400px;
-        }
-
-
-        .popup img {
-            display: block;
-            margin:auto;
-            max-width: 100%;
-        }
-
-
-        .close {
-            cursor: pointer;
-            float: right;
-        }
-
         /* Cat Pop-Up */
         .cat-popup {
             display: none;
@@ -213,7 +183,7 @@
         /* Pixie Dust Animation */
         .pixi-dust {
             position: absolute;
-            font-size: 12px; /* Tiny stars */
+            font-size: 120px; /* Tiny stars */
             color: gold;
             text-shadow: 0 0 8px rgba(255, 215, 0, 1), 0 0 15px rgba(255, 255, 255, 1);
             pointer-events: none;
