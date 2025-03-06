@@ -1,0 +1,169 @@
+<!-- research.html (Research and Publications Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Publications | Soumya Kaim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+
+    <!-- Navigation Sidebar -->
+    <section class="container">
+        <div id="toc">
+            <h3> Navigation</h3>
+            <ul>
+                <li><a href="#majorthesis">Major Thesis</a></li>
+                <li><a href="#minorthesis">Minor Thesis</a></li>
+                <li><a href="#mastersdissertation">Master's Dissertation</a></li>
+                <li><a href="#bachelorsdissertation">Bachelor's Dissertation</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="skills.html">Skills & Leadership</a></li>
+                <li><a href="index.html">Main Page</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Research & Publications -->
+    <section class="container">
+        <h1 class="text-4xl font-bold">Research & Publications</h1>
+
+        <!-- Major Thesis -->
+        <section id="majorthesis">
+            <h2 class="text-3xl font-bold">Major Thesis: Inducing Auditory Hallucinations</h2>
+            <p>Exploring how sensorimotor confusion affects auditory perception.</p>
+            <p><strong>Objective:</strong> This study investigates the role of sensorimotor confusion in the perception of auditory hallucinations in healthy adults. By employing a robotic system to introduce mismatched sensory feedback, the research aims to elucidate the underlying neural mechanisms contributing to hallucinatory experiences.</p>
+        
+            <p><strong>Methodology:</strong> A novel experimental paradigm was developed, integrating electroencephalography (EEG) and functional near-infrared spectroscopy (fNIRS) to monitor neural activity during robot-induced sensorimotor disruptions. Optimized auditory stimuli were specifically designed to align with the experimental conditions, ensuring controlled stimulus presentation. The study also involved overseeing experimental logistics, including participant management, data acquisition, and real-time troubleshooting to maintain signal integrity and mitigate interference from robotic components.</p>
+            
+            <p>To enhance data analysis efficiency and reproducibility, custom Python scripts were developed for data management and behavioral analysis. These scripts facilitated the computation of key behavioral metrics such as false positive rates, accuracy, and precision. Additionally, automated EEG preprocessing pipelines were implemented to streamline signal processing and statistical analysis, ensuring methodological rigor in examining the neurophysiological correlates of auditory hallucinations.</p>
+
+            <p style="text-align: center;">
+                <div class="center-content">
+                    <video width="360" controls>
+                        <source src="videos/sensorimotor-study.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </p>
+        </section>
+
+        <!-- Minor Thesis -->
+        <section id="minorthesis">
+            <h2 class="text-3xl font-bold">🪰 Minor Thesis: Do Flies Need Friends?</h2>
+            <p>Tracking social behavior & sleep patterns in Drosophila.</p>
+            <p><strong>Objective:</strong> This study examined the impact of genetic variation on social behavior and sleep regulation in <i>Drosophila melanogaster</i>. By investigating two genetically distinct strains, the research aims to determine how inherited differences influence patterns of social interaction and sleep duration.</p>
+
+            <p><strong>Methodology:</strong> The study involved collecting and analyzing 1,638+ hours (68 days) of continuous movement data from fruit flies housed in custom-designed social arenas. Two widely used strains, Canton-S (CS) and Oregon-R (OR), were selected for comparison. Behavioral data were processed using a combination of TREX for automated movement tracking and GraphPad Prism for statistical validation. Additionally, over five custom Python scripts were developed to analyze social behavior, locomotion, and sleep duration, ensuring accurate and reproducible results.</p>
+    
+            <p><strong>Key Findings:</strong> The results indicate that CS flies exhibited 27.39% more social interactions and a 34.5% longer sleep duration compared to OR flies. Across both strains, social interaction and sleep were reduced by 9.8% during the light phase compared to the dark phase, suggesting a circadian influence on these behaviors. However, no significant differences in locomotion were observed between isolated and grouped flies in either strain, indicating that genetic variation primarily affects social and sleep-related behaviors rather than movement activity.</p>
+    
+            <p>These findings contribute to a broader understanding of the genetic regulation of social and circadian behaviors in <i>Drosophila</i>, providing insights that may extend to other model organisms in neuroscience and behavioral genetics.</p>
+        
+
+            <p style="text-align: center;">
+                <div class="center-content">
+                    <img src="images/drosophila-thumb.png" alt="My Research" width="280">
+                </div>
+            </p>
+        </section>
+
+        <!-- Master's Dissertation -->
+        <section id="mastersdissertation">
+            <h2 class="text-3xl font-bold"> Master’s Dissertation (NFSU): Lateralization, Response Inhibition, and Impulsivity in Response to Emotional Faces and Scenes</h2>
+            <p><strong>Objective:</strong> This dissertation investigated the influence of emotional stimuli on brain lateralization, response inhibition, and impulsivity. By synthesizing findings from EEG and ERP studies, the research aims to provide a comprehensive understanding of how emotional processing affects cognitive control mechanisms.</p>
+
+            <p><strong>Methodology:</strong> A systematic review of EEG/ERP studies was conducted to examine the neural correlates of emotional processing and impulse control. The review analyzed existing literature on hemispheric dominance in emotional decision-making, with a particular focus on how lateralized brain activity influences inhibitory control and impulsive behaviors in response to emotionally salient stimuli.</p>
+
+            <p><strong>Impact:</strong> The study contributed to strengthening theoretical frameworks that link emotional processing with cognitive control, offering a neurophysiological perspective on how emotions modulate decision-making processes. Additionally, the systematic review demonstrated advanced critical analysis and synthesis skills, integrating diverse empirical findings into a cohesive theoretical model within neuroscience research.</p>
+        </section>
+
+        <!-- Bachelor's Dissertation -->
+        <section id="bachelorsdissertation">
+            <h2 class="text-3xl font-bold">Bachelor's Dissertation: Alexithymia and Substance Abuse</h2>
+            <p><strong>Objective:</strong> This dissertation examines the relationship between alexithymia, substance abuse, anxiety, self-esteem, and locus of control in both clinical and non-clinical populations. The study aims to explore how deficits in emotional regulation contribute to substance dependency and psychological distress.</p>
+
+            <p><strong>Methodology:</strong> A large-scale psychometric assessment was conducted with 150 participants, comprising both clinical and non-clinical groups. Standardized psychological measures were used to assess levels of alexithymia, substance abuse tendencies, and associated psychological factors. Correlational analyses were performed to determine the extent to which emotional regulation deficits are linked to substance dependency.</p>
+
+            <p><strong>Key Findings:</strong> The study revealed significant differences in alexithymia levels between clinical and non-clinical populations, highlighting a stronger association between emotional processing deficits and substance use disorders. Additionally, a psychological profile of substance users was established based on measures of emotional regulation, self-esteem, anxiety, and locus of control.</p>
+
+            <p><strong>Impact:</strong> These findings contribute to a broader understanding of addiction from a clinical psychology perspective, emphasizing the role of emotional regulation in substance dependency. The research also demonstrates expertise in psychometric testing, statistical analysis, and the application of psychological theories to real-world clinical issues.</p>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications">
+            <h2 class="text-3xl font-bold">📜 Publications</h2>
+            <p><b>Publication:</b> Drd2 & Social Functioning</p>
+            <p><strong>Overview:</strong> This study investigates the role of the human neuropsychiatric risk gene <i>Drd2</i> in social behavior across species. By examining its function in diverse model organisms, the research provides insights into the genetic mechanisms underlying social interaction and their relevance to neuropsychiatric disorders.</p>
+
+            <p><strong>Contribution:</strong> My involvement in this research encompassed multiple aspects of data processing and experimental management related to *Drosophila melanogaster*. I developed custom Python scripts to analyze over 500 minutes of social interaction data, ensuring accurate quantification and comparison of behavioral metrics across more than 50 biological samples. Additionally, I managed aspects of experiment logistics, including fruit fly handling, sample collection, and dataset validation, maintaining rigorous methodological standards throughout the study.</p>
+
+            <p><strong>Impact:</strong> This research contributes to a broader understanding of the genetic basis of social functioning, offering cross-species evidence of <i>Drd2</i>'s role in behavior regulation. By integrating computational analysis with experimental neurobiology, the study enhances knowledge of neuropsychiatric gene functions and their potential implications for human social behavior and mental health disorders.</p>
+
+            <p><strong>Read the full publication:</strong> <a href="https://doi.org/10.1038/s41380-023-02345-z" target="_blank">Molecular Psychiatry</a></p>
+    
+            <a href="https://doi.org/10.1038/s41380-023-02345-z" target="_blank">Read the full paper here</a>
+
+            <p style="text-align: center;">
+                <div class="center-content">
+                    <img src="images/drosophila-thumb.png" alt="My Research" width="300">
+                </div>
+            </p>
+        </section>
+
+        <!-- Statistics Skills , commented for future updates
+        <section id="statistical Analysis">
+            <h1 class="text-3xl font-bold">Statistical Analysis</h1>
+            <p> </p>
+        </section>
+        
+
+
+
+        
+        <section id="statistical Analysis">
+            <h1 class="text-3xl font-bold">Statistical Analysis</h1>
+            <p> </p>
+        </section>
+        
+
+
+
+        
+        <section id="statistical Analysis">
+            <h1 class="text-3xl font-bold">Statistical Analysis</h1>
+            <p> </p>
+        </section> -->
+        
+
+
+    </section>
+
+    <section class="container">
+        <a href="index.html">⬅ Back to Main Page</a>
+    </section>
+
+    <!-- Load Footer -->
+    <div id="footer-container"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            });
+    </script>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

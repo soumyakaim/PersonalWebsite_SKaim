@@ -1,0 +1,48 @@
+<!-- research.html (Research and Publications Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Publications | Soumya Kaim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Load Header -->
+    <div id="header-container"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-container").innerHTML = data;
+            });
+    </script>
+
+    <!-- Research & Publications Section -->
+    <section class="container section3" id="under-construction">
+        <h1 class="text-3xl font-bold">🚧 Under Construction 🚧</h1>
+        <p>This section is currently being updated with new content. Check back soon.</p>
+
+        <div class="center-content">
+            <button class="under-construction-btn">🔧 Page Under Construction 🔧</button>
+        </div>
+    </section>
+
+    <section class="container">
+        <a href="index.html">⬅ Back to Main Page</a>
+    </section>
+
+    <!-- Load Footer -->
+    <div id="footer-container"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            });
+    </script>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
