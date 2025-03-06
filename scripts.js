@@ -204,6 +204,23 @@
             }
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("📌 DOM fully loaded.");
+            
+            let counterElement = document.getElementById("viewCounter");
+            if (counterElement) {
+                let views = localStorage.getItem("viewCounter") || 0;
+                views = parseInt(views) + 1;
+                localStorage.setItem("viewCounter", views);
+                counterElement.innerText = views;
+        
+                console.log(`✅ View Counter Updated: ${views}`);
+            } else {
+                console.error("❌ viewCounter element not found.");
+            }
+        });
+
+
 
 
         document.getElementById("topButton").addEventListener("click", function() {
