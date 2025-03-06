@@ -20,7 +20,7 @@
          * - 90's cursors collection
          * -- https://github.com/tholman/90s-cursor-effects
          */             
-                (function fairyDustCursor() {
+        function fairyDustCursor() {
           
           var possibleColors = ["#FFD700", "#FFFFFF", "#FF69B4", " #F60000", " #FF8C00", "#00FF00", "#0000FF", " #4B0082", "#8B00FF"]; // Brighter Gold, White, Pink, other raindbow colors
           var particles = [];
