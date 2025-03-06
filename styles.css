@@ -3,18 +3,14 @@
         /* Retro Grey Background with Soft Pattern */
         /* Background: Grey floral pattern for a retro look */
         /* Custom Cursor: Adds a nature-themed cursor */
+       /* Softer Background - No Image */
         body {
-            background: #f7f7f7 url('https://www.transparenttextures.com/patterns/gray-floral.png');
+            background: #F2F2F2; /* Very light grey, almost white */
             color: rgb(39, 10, 10);
             font-family: 'EB Garamond', serif;
             cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
             overflow-x: hidden;
             font-size: 1.0rem;
-        }
-
-        body {
-            background: linear-gradient(rgba(247, 247, 247, 0.9), rgba(247, 247, 247, 0.9)), 
-                        url('https://www.transparenttextures.com/patterns/gray-floral.png');
         }
 
 
@@ -38,10 +34,10 @@
             padding: 15px;
             border-radius: 10px;
             font-family: 'Courier New', monospace;
-            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             width: 150px; /* Increase width slightly */
             text-align: left;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         /* Push main content to the right so it doesn't overlap with TOC */
@@ -215,10 +211,10 @@
 
 
         /* Pixie Dust Animation */
-       .pixi-dust {
+        .pixi-dust {
             position: absolute;
-            font-size: 14px; /* Adjust size of stars */
-            color: gold, pink, purple, yellow, blue; /* You can change this to white, pink, etc. */
+            font-size: 12px; /* Tiny stars */
+            color: gold;
             text-shadow: 0 0 8px rgba(255, 215, 0, 1), 0 0 15px rgba(255, 255, 255, 1);
             pointer-events: none;
             opacity: 1;
@@ -234,6 +230,7 @@
             from { transform: translateY(0px); }
             to { transform: translateY(-10px); } /* Move stars slightly upward */
         }
+
 
 
 
@@ -406,7 +403,6 @@
             padding: 20px;
             margin-top: 40px;
             text-align: center;
-            box-shadow: 0px -2px 10px rgba(0, 0, 0, 0);
         }
 
         /* Bottom Left Container (View Counter + Fish Tank) */
@@ -606,6 +602,36 @@
         .heading-icon {
             width: 30px; /* Adjust icon size */
             height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Sections - Soft Background & No Shadows */
+        .section1, .section2, .section3 {
+            background: rgba(255, 255, 255, 0.9); /* Soft White */
+            padding: 20px;
+            border-radius: 10px;
+            transition: background 0.3s ease-in-out;
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+        }
+
+        /* Sparkles Effect on Sections */
+        .section1::after, .section2::after, .section3::after {
+            content: "✨✨";
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 12px;
+            color: #FFD700; /* Gold sparkles */
+            opacity: 0.8;
+        }
+
+        /* Remove Box Shadows */
+        .box, .education-entry, .skills-entry, .research-entry {
+            background: rgba(255, 255, 255, 0.8); /* Soft white */
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: transform 0.3s, background 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05); /* Very light border */
         }
         
         
