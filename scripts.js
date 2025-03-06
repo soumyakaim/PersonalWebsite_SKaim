@@ -175,9 +175,24 @@
             document.getElementById("viewCounter").innerText = views;
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            let counterElement = document.getElementById("viewCounter");
+        
+            if (counterElement) { // Ensure the element exists before updating
+                let views = localStorage.getItem("viewCounter") || 0;
+                views = parseInt(views) + 1; // Convert to number and increment
+                localStorage.setItem("viewCounter", views);
+                counterElement.innerText = views;
+            } else {
+                console.error("❌ viewCounter element not found in the DOM.");
+            }
+        });
+
+
         document.getElementById("topButton").addEventListener("click", function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
+
 
 
 
