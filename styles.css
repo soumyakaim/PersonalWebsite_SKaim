@@ -192,7 +192,7 @@
             pointer-events: none;
             opacity: 1;
             transition: transform 1s ease-out;
-            filter: brightness(1.5); /* Make it glow */
+            filter: brightness(2.5); /* Make it glow */
         }
         
         @keyframes fadeOut {
@@ -249,7 +249,7 @@
             font-family: 'Courier New', monospace;
             box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
             z-index: 1000;
-            width: 140px; /* Reduce width */
+            width: 100px; /* Reduce width */
             text-align: left;
         }
 
@@ -271,11 +271,11 @@
             padding: 8px;  /* Increase padding for spacing */
             border-radius: 5px;
             transition: background 0.2s;
-            font-size: 0.8rem; /* Increase/decrease font size */
+            font-size: 0.6rem; /* Increase/decrease font size */
         }
         
         #toc h3 {
-            font-size: 0.9rem; /* Make TOC title bigger/smaller */
+            font-size: 0.8rem; /* Make TOC title bigger/smaller */
             font-weight: bold;
         }
         
