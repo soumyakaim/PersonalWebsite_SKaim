@@ -21,37 +21,41 @@
          * -- https://github.com/tholman/90s-cursor-effects
          */             
         function fairyDustCursor() {
-          
-          var possibleColors = ["#FFD700", "#FFFFFF", "#FF69B4", " #F60000", " #FF8C00", "#00FF00", "#0000FF", " #4B0082", "#8B00FF"]; // Brighter Gold, White, Pink, other raindbow colors
+          var possibleColors = ["#FFD700", "#FFFFFF", "#FF69B4", "#F60000", "#FF8C00", "#00FF00", "#0000FF", "#4B0082", "#8B00FF"];
           var particles = [];
-          
+        
           function init() {
             document.addEventListener('mousemove', onMouseMove);
             requestAnimationFrame(updateParticles);
           }
         
           function onMouseMove(e) {
-            for (let i = 0; i < 5; i++) { // Generate multiple particles per movement
+            for (let i = 0; i < 5; i++) {
               let dust = document.createElement("span");
               dust.className = "pixie-dust";
-              dust.innerHTML = "✨"; // Star sparkle effect
+              dust.innerHTML = "✨"; 
               dust.style.left = `${e.pageX + (Math.random() - 0.5) * 20}px`;
               dust.style.top = `${e.pageY + (Math.random() - 0.5) * 20}px`;
               dust.style.color = possibleColors[Math.floor(Math.random() * possibleColors.length)];
+              dust.style.position = "absolute";
+              dust.style.fontSize = "18px";
+              dust.style.opacity = "1";
+              dust.style.transition = "opacity 1s ease-out";
         
               document.body.appendChild(dust);
               particles.push(dust);
         
               setTimeout(() => {
-                dust.remove();
-              }, 8000); // Removes after 8 seconds
+                dust.style.opacity = "0";
+                setTimeout(() => dust.remove(), 1000);
+              }, 800);
             }
           }
         
           function updateParticles() {
             particles.forEach((particle, index) => {
               let opacity = parseFloat(particle.style.opacity);
-              opacity -= 0.03; // Fade out effect
+              opacity -= 0.03;
               if (opacity <= 0) {
                 particles.splice(index, 1);
                 particle.remove();
@@ -64,8 +68,12 @@
           }
         
           init();
-        })();
-
+        }
+        
+        // **Call the function to activate it**
+        fairyDustCursor();
+        
+        
 
 
 
