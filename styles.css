@@ -21,28 +21,51 @@
             text-align: center;
         }
 
-
-
-
+        
+        
+        /* Ensure TOC does not overlap text */
         #toc {
-            display: inline-block;
-            margin-top: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.225);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 150px; /* Increase width slightly */
+            text-align: left;
+        }
+        
+        /* Push main content to the right so it doesn't overlap with TOC */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            margin-left: 180px; /* Increased from 160px to 180px */
+        }
+        
+        /* Reduce TOC font size if it's still causing overlap */
+        #toc ul li a {
+            font-size: 0.7rem; /* Adjust to fit */
+        }
+        
+        /* Make TOC fully responsive on small screens */
+        @media (max-width: 768px) {
+            #toc {
+                position: relative;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        
+            .container {
+                margin-left: auto; /* Reset margin for small screens */
+            }
         }
 
-        #toc ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #toc ul li {
-            display: inline;
-            margin-right: 15px;
-        }
 
         h1 {
             font-size: 2.2rem;
