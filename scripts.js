@@ -201,19 +201,6 @@
         });
 
 
-        
-            // Ensure #topButton exists before adding event listener
-            let topButton = document.getElementById("topButton");
-            if (topButton) {
-                topButton.addEventListener("click", function () {
-                            window.scrollTo({ top: 0, behavior: "smooth" });
-                        });
-                    } else {
-                        console.error("❌ topButton element not found.");
-                    }
-            });
-
-
 
 
         document.getElementById("topButton").addEventListener("click", function() {
