@@ -16,36 +16,9 @@
 
         document.getElementById("menu-button").addEventListener("click", function() {
             let menu = document.getElementById("toc");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
+            menu.classList.toggle("hidden");
         });
 
-
-               /*!
-         * Fairy Dust Cursor.js
-         * - 90's cursors collection
-         * -- https://github.com/tholman/90s-cursor-effects
-         */             
-        document.addEventListener("mousemove", function(e) {
-            let star = document.createElement("span");
-            star.innerHTML = "✨";
-            star.style.position = "absolute";
-            star.style.left = `${e.pageX}px`;
-            star.style.top = `${e.pageY}px`;
-            star.style.fontSize = "16px";
-            star.style.opacity = "1";
-            star.style.transition = "opacity 0.8s ease-out";
-            
-            document.body.appendChild(star);
-            
-            setTimeout(() => {
-                star.style.opacity = "0";
-                setTimeout(() => star.remove(), 800);
-            }, 500);
-        });
 
 
         
