@@ -14,24 +14,6 @@
             popup.style.display = "none";
         }
 
-        document.getElementById("menu-button").addEventListener("click", function() {
-            let menu = document.getElementById("toc");
-            menu.classList.toggle("hidden");
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            let menuButton = document.getElementById("menu-button");
-            let menu = document.getElementById("toc");
-        
-            if (menuButton && menu) {
-                menuButton.addEventListener("click", function () {
-                    menu.classList.toggle("hidden");
-                });
-            } else {
-                console.error("❌ Menu button or menu (`#toc`) not found.");
-            }
-        });
-
 
 
 
@@ -217,6 +199,43 @@
                 console.error("❌ topButton element not found.");
             }
         });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // 🔹 Fix Menu Button Toggle
+            let menuButton = document.getElementById("menu-button");
+            let menu = document.getElementById("toc");
+        
+            if (menuButton && menu) {
+                menuButton.addEventListener("click", function () {
+                    menu.classList.toggle("hidden");
+                });
+            } else {
+                console.error("❌ Menu button or `#toc` not found.");
+            }
+        
+            // 🔹 Fix Go Up Button
+            let topButton = document.getElementById("topButton");
+            if (topButton) {
+                topButton.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            } else {
+                console.error("❌ `#topButton` not found.");
+            }
+        
+            // 🔹 Make Header Clickable to Scroll Up
+            let header = document.getElementById("header-container");
+            if (header) {
+                header.style.cursor = "pointer"; // Change cursor to indicate clickability
+                header.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            } else {
+                console.error("❌ `#header-container` not found.");
+            }
+        });
+
 
 
 
