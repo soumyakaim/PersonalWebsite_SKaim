@@ -219,12 +219,12 @@
             let topButton = document.getElementById("topButton");
             if (topButton) {
                 topButton.addEventListener("click", function () {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-            } else {
-                console.error("❌ topButton element not found.");
-            }
-        });
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        });
+                    } else {
+                        console.error("❌ topButton element not found.");
+                    }
+            });
 
 
 
