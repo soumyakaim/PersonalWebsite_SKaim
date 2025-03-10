@@ -179,26 +179,6 @@
         }
 
 
-        /* Pixie Dust Animation */
-        .pixi-dust {
-            position: absolute;
-            font-size: 120px; /* Tiny stars */
-            color: gold;
-            text-shadow: 0 0 8px rgba(255, 215, 0, 1), 0 0 15px rgba(255, 255, 255, 1);
-            pointer-events: none;
-            opacity: 1;
-            animation: fadeOut 1s ease-out forwards, moveUp 1s ease-out forwards;
-        }
-        
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
-        }
-        
-        @keyframes moveUp {
-            from { transform: translateY(0px); }
-            to { transform: translateY(-10px); } /* Move stars slightly upward */
-        }
 
 
 
@@ -560,7 +540,7 @@
         }
 
         /* Sections - Soft Background & No Shadows */
-        .section1, .section2, .section3 {
+        .section1, .section2, .section3, section4 {
             background: rgba(255, 255, 255, 0.9); /* Soft White */
             padding: 20px;
             border-radius: 10px;
