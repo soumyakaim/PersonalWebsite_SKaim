@@ -19,6 +19,20 @@
             menu.classList.toggle("hidden");
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            let menuButton = document.getElementById("menu-button");
+            let menu = document.getElementById("toc");
+        
+            if (menuButton && menu) {
+                menuButton.addEventListener("click", function () {
+                    menu.classList.toggle("hidden");
+                });
+            } else {
+                console.error("❌ Menu button or menu (`#toc`) not found.");
+            }
+        });
+
+
 
 
         
@@ -205,6 +219,18 @@
         document.getElementById("topButton").addEventListener("click", function() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let topButton = document.getElementById("topButton");
+            if (topButton) {
+                topButton.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            } else {
+                console.error("❌ topButton element not found.");
+            }
+        });
+
 
 
 
