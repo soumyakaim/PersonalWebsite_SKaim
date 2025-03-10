@@ -14,20 +14,40 @@
             popup.style.display = "none";
         }
 
+        document.getElementById("menu-button").addEventListener("click", function() {
+            let menu = document.getElementById("toc");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        });
+
 
                /*!
          * Fairy Dust Cursor.js
          * - 90's cursors collection
          * -- https://github.com/tholman/90s-cursor-effects
          */             
-        function fairyDustCursor() {
-          var possibleColors = ["#FFD700", "#FFFFFF", "#FF69B4", "#F60000", "#FF8C00", "#00FF00", "#0000FF", "#4B0082", "#8B00FF"];
-          var particles = [];
-        
-          function init() {
-            document.addEventListener('mousemove', onMouseMove);
-            requestAnimationFrame(updateParticles);
-          }
+        document.addEventListener("mousemove", function(e) {
+            let star = document.createElement("span");
+            star.innerHTML = "✨";
+            star.style.position = "absolute";
+            star.style.left = `${e.pageX}px`;
+            star.style.top = `${e.pageY}px`;
+            star.style.fontSize = "16px";
+            star.style.opacity = "1";
+            star.style.transition = "opacity 0.8s ease-out";
+            
+            document.body.appendChild(star);
+            
+            setTimeout(() => {
+                star.style.opacity = "0";
+                setTimeout(() => star.remove(), 800);
+            }, 500);
+        });
+
+
         
           function onMouseMove(e) {
             for (let i = 0; i < 5; i++) {
