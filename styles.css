@@ -5,7 +5,7 @@
         /* Custom Cursor: Adds a nature-themed cursor */
        /* Softer Background - No Image */
         body {
-            background: rgb((128, 128, 128, 0.5); /* Very light grey, almost white , a bit transparent */
+            background: rgba(128, 128, 128, 0.5); /* Very light grey, almost white , a bit transparent */
             color: rgb(39, 10, 10);
             font-family: 'EB Garamond', serif;
             cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
@@ -540,7 +540,7 @@
         }
 
         /* Sections - Soft Background & No Shadows */
-        .section1, .section2, .section3, section4 {
+        .section1, .section2, .section3, .section4 {
             background: rgba(255, 255, 255, 0.9); /* Soft White */
             padding: 20px;
             border-radius: 10px;
@@ -598,6 +598,7 @@
         .hidden {
             display: none !important;
         }
+
 
 
 
