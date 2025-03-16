@@ -171,12 +171,7 @@
 
 
 
-         // 📌 Toggle Mobile Menu
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("show");
-        }
-        
-        // 📌 Smooth Scrolling to Sections
+         // 📌 Smooth Scrolling to Sections
         document.addEventListener("DOMContentLoaded", function () {
             const links = document.querySelectorAll('a[href^="#"], a[href*=".html#"]');
         
@@ -197,6 +192,7 @@
                 });
             });
         });
+
 
 
 
