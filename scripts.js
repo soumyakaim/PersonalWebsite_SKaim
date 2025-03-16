@@ -174,7 +174,33 @@
               // 📌 Toggle the mobile menu
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("show");
+
+                
         }
+
+
+            // For smooth scroling of the menu bar
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll('a[href^="#"], a[href*=".html#"]');
+        
+            links.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    // Prevent default if navigating on the same page
+                    if (this.hash && this.pathname === location.pathname) {
+                        event.preventDefault();
+                        const targetId = this.hash.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Adjust offset for fixed menu
+                                behavior: "smooth"
+                            });
+                        }
+                    }
+                });
+            });
+        });
+
 
         
         
