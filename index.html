@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    
+    <!-- Fairydust Effect -->
     <script type="module">
       import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
     
@@ -18,13 +18,36 @@
       });
     </script>
 
+    <!-- Pop up for VoCS -->
+    <!-- Overlay -->
+    <div id="overlay"></div>
 
+    <!-- PDF Popup -->
+    <div id="pdfPopup">
+        <h2>Important Information</h2>
+        <iframe src="soumyakaim_CV.pdf"></iframe>
+        <button id="closePopup">Close</button>
+    </div>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Check if the popup has been seen before
+            if (!localStorage.getItem("pdfPopupShown")) {
+                document.getElementById("pdfPopup").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
+
+                // Mark as shown in localStorage
+                localStorage.setItem("pdfPopupShown", "true");
+            }
+
+            // Close the popup
+            document.getElementById("closePopup").addEventListener("click", function () {
+                document.getElementById("pdfPopup").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+            });
+        });
+    </script>
     
-
-   
-
-
 
     <div id="header-container"></div> <!-- Placeholder for header -->
     <script>
