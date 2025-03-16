@@ -171,12 +171,11 @@
 
 
 
-              // 📌 Toggle the mobile menu
+       // 📌 Toggle Mobile Menu
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("show");
-
-                
         }
+
 
 
             // For smooth scroling of the menu bar
