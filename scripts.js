@@ -18,28 +18,7 @@
 
 
         
-          function onMouseMove(e) {
-            for (let i = 0; i < 5; i++) {
-              let dust = document.createElement("span");
-              dust.className = "pixie-dust";
-              dust.innerHTML = "✨"; 
-              dust.style.left = `${e.pageX + (Math.random() - 0.5) * 20}px`;
-              dust.style.top = `${e.pageY + (Math.random() - 0.5) * 20}px`;
-              dust.style.color = possibleColors[Math.floor(Math.random() * possibleColors.length)];
-              dust.style.position = "absolute";
-              dust.style.fontSize = "18px";
-              dust.style.opacity = "1";
-              dust.style.transition = "opacity 1s ease-out";
-        
-              document.body.appendChild(dust);
-              particles.push(dust);
-        
-              setTimeout(() => {
-                dust.style.opacity = "0";
-                setTimeout(() => dust.remove(), 1000);
-              }, 800);
-            }
-          }
+          
         
           function updateParticles() {
             particles.forEach((particle, index) => {
