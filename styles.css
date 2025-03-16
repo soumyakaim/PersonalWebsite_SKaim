@@ -536,7 +536,7 @@
             padding: 10px 0;
             text-align: center;
             z-index: 1000;
-            scroll-behavior: smooth;
+           
         }
         
         #stickyMenu ul {
@@ -596,6 +596,103 @@
         
         #stickyMenu ul li .dropdown li a:hover {
             background: rgba(255, 255, 255, 0.2);
+        }
+
+   
+        
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        #navLinks {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+        
+        #navLinks li {
+            position: relative;
+        }
+        
+        #navLinks li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: background 0.3s;
+        }
+        
+        #navLinks li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        /* 📌 Dropdown Styling */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            list-style-type: none;
+            padding: 0;
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            border-radius: 5px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown-content li a {
+            padding: 10px;
+            display: block;
+        }
+        
+        .dropdown-content li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* 📌 HAMBURGER MENU (Mobile-Friendly) */
+        #hamburger {
+            font-size: 30px;
+            cursor: pointer;
+            display: none; /* Hidden on larger screens */
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            /* Adjust menu for smaller screens */
+            #navLinks {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 50px;
+                left: 0;
+                width: 100%;
+            }
+        
+            #navLinks.show {
+                display: flex;
+            }
+        
+            #navLinks li {
+                text-align: center;
+            }
+        
+            #hamburger {
+                display: block;
+            }
         }
 
 
