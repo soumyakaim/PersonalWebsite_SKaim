@@ -531,7 +531,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+            background: rgba(0, 0, 0, 0.9); /* Dark transparent background */
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -545,14 +545,17 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
         }
-        
+
+        /* 🔹 Ensure that the dropdowns don’t break the alignment */
         #stickyMenu ul li {
             position: relative;
             display: inline-block;
         }
-        
+
+        /* 📌 Prevents menu overlap */
         #stickyMenu ul li a {
             color: white;
             text-decoration: none;
@@ -645,15 +648,22 @@
             top: 100%;
             left: 0;
             border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;  /* Ensures it appears above other content */
         }
         
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        
+
+        /* 📌 Fix alignment issues */
         .dropdown-content li a {
             padding: 10px;
             display: block;
+            font-size: 14px;
+            transition: background 0.3s;
+            text-align: left;
+            white-space: nowrap; /* Prevents items from wrapping */
         }
         
         .dropdown-content li a:hover {
