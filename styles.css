@@ -466,8 +466,8 @@
         }
         
 
-            /* Pop up for the VoCS PDF */
-            #pdfPopup {
+       /* Pop up for the VoCS PDF */
+       #pdfPopup {
             display: none;
             position: fixed;
             top: 50%;
