@@ -157,20 +157,6 @@
         }
 
 
-        // Clicking on different sections triggers different fun images on the right side
-        document.querySelector(".section1").addEventListener("click", function() {
-            showFunGraphic("images/harlingen_profielpic_1.jpg"); // Replace with a fish GIF
-        });
-
-        document.querySelector(".section2").addEventListener("click", function() {
-            showFunGraphic("images/laptoppixel.gif"); // Replace with a fishbowl GIF
-        });
-
-        document.querySelector(".section3").addEventListener("click", function() {
-            showFunGraphic("images/butterflies 255.gif"); // Replace with a laptop GIF
-        });
-
-
         // Close popups when clicking outside of them
         // If the user clicks outside of a pop-up, it closes automatically
         document.addEventListener("click", function (event) {
@@ -185,57 +171,13 @@
 
 
 
-        document.getElementById("topButton").addEventListener("click", function() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
+              // 📌 Toggle the mobile menu
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
 
-        document.addEventListener("DOMContentLoaded", function () {
-            let topButton = document.getElementById("topButton");
-            if (topButton) {
-                topButton.addEventListener("click", function () {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-            } else {
-                console.error("❌ topButton element not found.");
-            }
-        });
-
-
-        document.addEventListener("DOMContentLoaded", function () {
-            // 🔹 Fix Menu Button Toggle
-            let menuButton = document.getElementById("menu-button");
-            let menu = document.getElementById("toc");
         
-            if (menuButton && menu) {
-                menuButton.addEventListener("click", function () {
-                    menu.classList.toggle("hidden");
-                });
-            } else {
-                console.error("❌ Menu button or `#toc` not found.");
-            }
         
-            // 🔹 Fix Go Up Button
-            let topButton = document.getElementById("topButton");
-            if (topButton) {
-                topButton.addEventListener("click", function () {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-            } else {
-                console.error("❌ `#topButton` not found.");
-            }
-        
-            // 🔹 Make Header Clickable to Scroll Up
-            let header = document.getElementById("header-container");
-            if (header) {
-                header.style.cursor = "pointer"; // Change cursor to indicate clickability
-                header.addEventListener("click", function () {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-            } else {
-                console.error("❌ `#header-container` not found.");
-            }
-        });
-
 
 
 
