@@ -20,23 +20,6 @@
             padding: 20px;
             text-align: center;
         }
-
-            
-        /* Ensure TOC does not overlap text */
-        #toc {
-            position: fixed;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.225);
-            padding: 15px;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            z-index: 1000;
-            width: 150px; /* Increase width slightly */
-            text-align: left;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
         
         /* Push main content to the right so it doesn't overlap with TOC */
         .container {
@@ -46,10 +29,6 @@
             margin-left: 180px; /* Increased from 160px to 180px */
         }
         
-        /* Reduce TOC font size if it's still causing overlap */
-        #toc ul li a {
-            font-size: 0.7rem; /* Adjust to fit */
-        }
         
         /* Make TOC fully responsive on small screens */
         @media (max-width: 768px) {
@@ -67,19 +46,19 @@
 
 
         h1 {
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 5vw, 3rem);
         }
         
         h2 {
-            font-size: 2.0rem;
+            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
         }
         
         h3 {
-            font-size: 1.6rem;
+            font-size: clamp(1.2rem, 4vw, 2rem);
         }
         
         h4 {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 3.5vw, 1.5rem);
         }
 
             /* Keep the header title and description centered */
@@ -107,6 +86,8 @@
         .container p, 
         .container section p {
             text-align: justify !important;
+            font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+            line-height: 1.6;
         }
 
 
@@ -178,62 +159,12 @@
             border-radius: 5px;
         }
 
-
-
-
-
-
-        #topButton {
-            position: fixed;
-            bottom: 50px;
-            right: 20px;
-            background: url('images/uparrow.gif') no-repeat center center;
-            background-size: cover;
-            width: 50px;
-            height: 50px;
-            border: none;
-            cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
-            transition: transform 0.2s;
-        }
-
-        #topButton:hover {
-            background: rgba(200, 200, 200, 1);
-        }
-
         /* Centering Images, Videos, and Cat Popup */
         .center-content {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
-
-       
-
-        #toc ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #toc ul li {
-            margin: 10px 0;
-        }
-
-        #toc ul li a {
-            text-decoration: none;
-            color: rgb(33, 2, 2);
-            font-weight: bold;
-            display: block;
-            padding: 8px;  /* Increase padding for spacing */
-            border-radius: 5px;
-            transition: background 0.2s;
-            font-size: 0.6rem; /* Increase/decrease font size */
-        }
-        
-        #toc h3 {
-            font-size: 0.8rem; /* Make TOC title bigger/smaller */
-            font-weight: bold;
         }
         
 
@@ -242,11 +173,6 @@
             margin: auto; /* Ensures proper centering */
             padding: 20px;
             text-align: center;
-        }
-
-
-        #toc ul li a:hover {
-            background: rgba(245, 245, 213, 0.807);
         }
 
         /* offset so sectiosn arent hidden by TOC */
@@ -274,18 +200,6 @@
             gap: 50px;
         }
 
-        /* Adjust View Counter */
-        #viewCounterBox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            font-weight: bold;
-            color: black;
-            margin-right: auto;
-        }
-
         /* Cat Pop-Up */
         .cat-popup {
             display: none;
@@ -298,24 +212,6 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Scroll to Top Button */
-        #topButton {
-            position: fixed;
-            bottom: 50px;
-            right: 20px;
-            background: url('images/uparrow.gif') no-repeat center center;
-            background-size: cover;
-            width: 50px;
-            height: 50px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        #topButton:hover {
-            background: rgba(200, 200, 200, 1);
         }
 
         /* Fun Graphics */
@@ -569,38 +465,9 @@
             border: 1px solid rgba(0, 0, 0, 0.05); /* Very light border */
         }
         
-        #menu-button {
-            position: fixed;
-            left: 10px;
-            top: 20px;
-            font-size: 55px;
-            cursor: pointer;
-            background: rgba(102, 51, 153, 1);
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 2000;
-        }
-        
-        #toc {
-            position: fixed;
-            left: 10px;
-            top: 50px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
-            border-radius: 10px;
-            z-index: 1000;
-            width: 100px;
-            text-align: left;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            display: none; /* Initially hidden */
-        }
-        
-        .hidden {
-            display: none !important;
-        }
 
-/* Pop up for the VoCS PDF */
- #pdfPopup {
+            /* Pop up for the VoCS PDF */
+            #pdfPopup {
             display: none;
             position: fixed;
             top: 50%;
@@ -657,6 +524,80 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
+        /* Sticky Navigation Menu */
+        #stickyMenu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000;
+            scroll-behavior: smooth;
+        }
+        
+        #stickyMenu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        #stickyMenu ul li {
+            position: relative;
+            display: inline-block;
+        }
+        
+        #stickyMenu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+            transition: background 0.3s;
+        }
+        
+        #stickyMenu ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        /* Dropdown Menu */
+        #stickyMenu ul li .dropdown {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            list-style-type: none;
+            padding: 0;
+            min-width: 200px;
+            top: 100%;
+            left: 0;
+            border-radius: 5px;
+        }
+        
+        #stickyMenu ul li:hover .dropdown {
+            display: block;
+        }
+        
+        #stickyMenu ul li .dropdown li {
+            display: block;
+        }
+        
+        #stickyMenu ul li .dropdown li a {
+            padding: 10px;
+            display: block;
+        }
+        
+        #stickyMenu ul li .dropdown li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
 
 
 
