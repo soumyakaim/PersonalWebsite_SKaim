@@ -540,7 +540,7 @@
         }
         
         #stickyMenu ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
@@ -638,23 +638,29 @@
         }
         
         /* 📌 Dropdown Styling */
-        .dropdown-content {
-            display: none;
+       .dropdown-content {
+            display: none; /* Ensures dropdown starts hidden */
             position: absolute;
-            background: rgba(0, 0, 0, 0.9);
-            list-style-type: none;
-            padding: 0;
-            min-width: 200px;
             top: 100%;
             left: 0;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 200px;
+            list-style: none;
+            padding: 0;
             border-radius: 5px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;  /* Ensures it appears above other content */
+            z-index: 1000;
         }
         
         .dropdown:hover .dropdown-content {
             display: block;
         }
+        
+        /* 📌 Dropdown menu items */
+        .dropdown-content li {
+            display: block;
+        }
+
 
         /* 📌 Fix alignment issues */
         .dropdown-content li a {
