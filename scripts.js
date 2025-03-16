@@ -171,22 +171,29 @@
 
 
 
-       // 📌 Toggle Mobile Menu
+         // 📌 Toggle Mobile Menu
         function toggleMenu() {
             document.getElementById("navLinks").classList.toggle("show");
         }
         
-        // 📌 Ensure dropdowns only show on hover (not always open)
+        // 📌 Smooth Scrolling to Sections
         document.addEventListener("DOMContentLoaded", function () {
-            const dropdowns = document.querySelectorAll(".dropdown");
+            const links = document.querySelectorAll('a[href^="#"], a[href*=".html#"]');
         
-            dropdowns.forEach(dropdown => {
-                dropdown.addEventListener("mouseover", function () {
-                    this.querySelector(".dropdown-content").style.display = "block";
-                });
-        
-                dropdown.addEventListener("mouseleave", function () {
-                    this.querySelector(".dropdown-content").style.display = "none";
+            links.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    // Prevent default if navigating on the same page
+                    if (this.hash && this.pathname === location.pathname) {
+                        event.preventDefault();
+                        const targetId = this.hash.substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80, // Adjust for fixed menu
+                                behavior: "smooth"
+                            });
+                        }
+                    }
                 });
             });
         });
