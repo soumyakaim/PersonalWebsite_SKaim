@@ -29,6 +29,7 @@
     </script>
 
     <h1>VoCS Application</h1>
+    <p> Sincere apologies to the VoCS Selection Committee for the round about method of displaying my Europass CV, Letter of Motivation and Details of my Referees. The original google drive and adobe URLs were showing erro and not working out. </p>
 
     <!-- Europass CV (Embed or Link) -->
     <h2>📜 Europass CV</h2>
@@ -37,15 +38,32 @@
         <a href="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/soumya-kaim/e837c99a-eafa-4a93-a0a2-38bea7566176?view=html" target="_blank">Click here</a>
     </p>
 
-    <!-- If Europass allows embedding -->
-    <iframe src="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/soumya-kaim/e837c99a-eafa-4a93-a0a2-38bea7566176?view=html" width="100%" height="500px"></iframe>
+    <!-- If Europass allows embedding 
+    <iframe src="https://europa.eu/europass/eportfolio/api/eprofile/shared-profile/soumya-kaim/e837c99a-eafa-4a93-a0a2-38bea7566176?view=html" width="100%" height="500px"></iframe> -->
 
     <!-- Downloadable PDF -->
     <h2>📄 Letter of Motivation & References</h2>
-    <p>Download my complete application package (Letter of Motivation + Reference Contacts) as a single PDF.</p>
-    <a href="skaim_vocs_application.pdf" download="Soumya_Kaim_VoCS.pdf">
+    <p>Download complete application package (Europass CV + Letter of Motivation + Reference Contacts) as a single PDF.</p>
+   
+        <object data="skaim_vocs_application.pdf" type="application/pdf" width="100%" height="500px">
+          <p>It appears you don't have a PDF plugin for this browser. No biggie... you can  <a href="skaim_vocs_application.pdf" download="Soumya_Kaim_VoCS.pdf"> click here to download the PDF file.</a></p>
+        </object>
         <button>📥 Download Application PDF</button>
     </a>
+
+    <div id="footer-container"></div> <!-- Placeholder for footer -->
+
+    <script>
+        // Dynamically load the footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-container").innerHTML = data;
+            });
+    </script>
+
+
+    <script src="scripts.js"></script>
 
 </body>
 </html>
