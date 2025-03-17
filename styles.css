@@ -680,36 +680,7 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        
-        /* 📌 Dropdown menu items */
-        .dropdown-content li {
-            display: block;
-        }
-
-
-        /* 📌 Fix alignment issues */
-        .dropdown-content li a {
-            padding: 10px;
-            display: block;
-            font-size: 14px;
-            transition: background 0.3s;
-            text-align: left;
-            white-space: nowrap; /* Prevents items from wrapping */
-        }
-        
-        .dropdown-content li a:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* 📌 HAMBURGER MENU (Mobile-Friendly) */
-        #hamburger {
-            font-size: 30px;
-            cursor: pointer;
-            display: none; /* Hidden on larger screens */
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 5px;
-        }
+   
         
         @media (max-width: 768px) {
             /* Adjust menu for smaller screens */
@@ -731,9 +702,6 @@
                 text-align: center;
             }
         
-            #hamburger {
-                display: block;
-            }
         }
 
 
