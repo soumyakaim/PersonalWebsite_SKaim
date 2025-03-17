@@ -637,9 +637,9 @@
             border-radius: 5px;
         }
         
-        /* 📌 Dropdown Styling */
-       .dropdown-content {
-            display: none; /* Ensures dropdown starts hidden */
+              /* Hide dropdown by default */
+        .dropdown-content {
+            display: none;
             position: absolute;
             top: 100%;
             left: 0;
@@ -651,6 +651,31 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
+        
+        /* Show dropdown when hovering on parent */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Fix alignment */
+        .dropdown-content li {
+            display: block;
+        }
+        
+        /* Improve styling */
+        .dropdown-content li a {
+            padding: 10px;
+            display: block;
+            font-size: 14px;
+            transition: background 0.3s;
+            text-align: left;
+            white-space: nowrap; /* Prevents wrapping */
+        }
+        
+        .dropdown-content li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
         
         .dropdown:hover .dropdown-content {
             display: block;
