@@ -559,7 +559,7 @@
         #stickyMenu ul li a {
             color: white;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 10px;
             font-weight: bold;
             padding: 10px 15px;
             display: block;
@@ -600,7 +600,7 @@
         .dropdown-content li a {
             padding: 10px;
             display: block;
-            font-size: 14px;
+            font-size: 10px;
             transition: background 0.3s;
             text-align: left;
             white-space: nowrap; /* Prevents wrapping */
