@@ -5,15 +5,16 @@ This is **Version 1.0**, and I aim to improve both the aesthetics (aligning it m
 
 ## 🔮 Planned Improvements
 - Improve website styling to enhance the **early 2000s aesthetic**.
-- Make the **Table of Contents (TOC) non-overlapping** and more responsive.
-- Fix **video upload issues** (currently facing compression limitations, so I'll be hosting them externally (aka YT)).
+- Make the **menu bar non-overlapping** and more responsive in mobile version. 
 - Add **more interactive elements**, animations, and dynamic content.
+- Add more pictures and videos relevant to my work (both research and skills section) to make reading easy. I'm not a fan huge text blocks one after the other.
+- Reduce the Education section into fun nuggets of info. 
 
 ## ⚡ Current Issues
-- **Table of Contents (TOC) overlaps the main text** on certain screen sizes.
+- **Menu bar overlaps the main text** on certain screen sizes.
 - The setup is not mobile friendly.
 - The view counter is not updating. Removed it for now, I will come back to it later.
-- The pixie dust effect is not workiing even thought it works when I run the script via VScode. 
+- Certain images and videos do not play randomly. I dont know why and dont know how to fix it, yet. 
 
 ## 🌐 Live Website
 [🔗 Visit my website here](https://soumyakaim.github.io/PersonalWebsite_SKaim/)
