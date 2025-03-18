@@ -10,7 +10,7 @@
             font-family: 'EB Garamond', serif;
             cursor: url('https://cur.cursors-4u.net/nature/nat-6/nat587.cur'), auto;
             overflow-x: hidden;
-            font-size: 1.0rem;
+            font-size: 100%;
         }
 
 
@@ -28,29 +28,14 @@
             padding: 20px;
             margin-left: 180px; /* Increased from 160px to 180px */
         }
-        
-        
-        /* Make TOC fully responsive on small screens */
-        @media (max-width: 768px) {
-            #toc {
-                position: relative;
-                width: 100%;
-                text-align: center;
-                margin-bottom: 20px;
-            }
-        
-            .container {
-                margin-left: auto; /* Reset margin for small screens */
-            }
-        }
 
 
         h1 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-size: clamp(1.4rem, 5vw, 3rem);
         }
         
         h2 {
-            font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+            font-size: clamp(1.3rem, 4.5vw, 2.5rem);
         }
         
         h3 {
@@ -559,7 +544,7 @@
         #stickyMenu ul li a {
             color: white;
             text-decoration: none;
-            font-size: 10px;
+            font-size: 14px;
             font-weight: bold;
             padding: 10px 15px;
             display: block;
@@ -600,7 +585,7 @@
         .dropdown-content li a {
             padding: 10px;
             display: block;
-            font-size: 10px;
+            font-size: 14px;
             transition: background 0.3s;
             text-align: left;
             white-space: nowrap; /* Prevents wrapping */
